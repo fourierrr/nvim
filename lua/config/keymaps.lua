@@ -17,10 +17,12 @@ local mymap = vim.keymap.set
 -- rename function
 -- need set remap = true !
 vim.keymap.set("n", "<leader>rn", "<leader>cr", { remap = true })
+vim.keymap.set("n", "ff", "<leader>e", { remap = true })
 
 mymap("i", "jk", "<ESC>", opts)
 -- leader q for quit
 mymap("n", "<leader>q", ":q<CR>", opts)
+mymap("n", "<leader><enter>", ":noh<CR>", opts)
 
 -- telescope keymap
 mymap("n", "<leader>f", LazyVim.pick("files"), opts)
@@ -43,6 +45,13 @@ mymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 mymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 mymap("n", "gh", vim.lsp.buf.hover, opts)
 
+-- bufferline 快速切换到指定 buffer
+for i = 1, 9 do
+  mymap("n", "<leader>" .. i,
+    "<cmd>BufferLineGoToBuffer " .. i .. "<CR>",
+    { desc = "Go to buffer " .. i }
+  )
+end
 ----------------------------------
 ----------------------------------
 ----------------------------------

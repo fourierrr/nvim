@@ -8,10 +8,13 @@ return {
       lsp_format = "fallback", -- not recommended to change
     },
     formatters_by_ft = {
-      lua = { "stylua" },
-      fish = { "fish_indent" },
-      sh = { "shfmt" },
-      python = { "Ruff" },
+      ["html"] = { "prettier" },
+      ["yaml"] = { "yamlfmt" },
+      ["yml"] = { "yamlfmt" },
+      ["lua"] = { "stylua" },
+      ["go"] = { "goimports" },
+      ["sh"] = { "shfmt" },
+      -- ["python"] = { "ruff" },
     },
     -- The options you set here will be merged with the builtin formatters.
     -- You can also define any custom formatters here.

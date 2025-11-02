@@ -1,12 +1,11 @@
 return {
-  -- add symbols-outline
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "tt", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    opts = {
-      -- add your options that should be passed to the setup() function here
-      position = "right",
-    },
+  "hedyhli/outline.nvim",
+  lazy = true,
+  cmd = { "Outline", "OutlineOpen" },
+  keys = { -- Example mapping to toggle outline
+    { "tt", "<cmd>Outline<CR>", desc = "Toggle outline" },
+  },
+  opts = {
+    -- Your setup opts here
   },
 }
