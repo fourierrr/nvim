@@ -1,2 +1,2 @@
 -- set ;; as :=
-vim.keymap.set("i", ";;", ":=", { noremap = true })
+vim.keymap.set("i", ";;", ":=", { buffer = true, noremap = true })
